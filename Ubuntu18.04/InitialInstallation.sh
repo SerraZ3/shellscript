@@ -320,3 +320,33 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
     echo "fc-cache -f"
     fc-cache -f
 fi
+
+echo -n "Instalar Python 3(y/n)? "
+read answer
+if [ "$answer" != "${answer#[Yy]}" ] ;then
+    echo "Instalando Python 3"
+    sudo apt update
+    sudo apt install software-properties-common
+    sudo add-apt-repository ppa:deadsnakes/ppa
+    sudo apt install python3.7
+    sudo apt install python3.7
+fi
+
+echo -n "Instalar Pycharm(y/n) via snap? "
+read answer
+if [ "$answer" != "${answer#[Yy]}" ] ;then
+    echo "Instalando Pycharm"
+    sudo apt update
+    sudo snap install pycharm-community --classic
+    sudo snap refresh pycharm-community --classic
+
+fi
+
+echo -n "Instalar Pip/Pip3(y/n)? "
+read answer
+if [ "$answer" != "${answer#[Yy]}" ] ;then
+    echo "Instalando Pip/Pip3"
+    sudo apt update
+    sudo apt install python3-pip
+    sudo apt install python-pip
+fi
