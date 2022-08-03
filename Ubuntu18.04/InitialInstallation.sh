@@ -5,10 +5,10 @@ sudo apt install curl -y
 sudo apt install snap -y
 sudo apt-get install build-essential libssl-dev libffi-dev libgmp3-dev -y
 
-echo -n "Instalar Google Chrome (y/n)? "
+echo -n "Google Chrome (y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando Google Chrome"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     echo "========================"
 
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -16,65 +16,65 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
     sudo dpkg -i google-chrome-stable_current_amd64.deb
 fi
 
-echo -n "Instalar Unrar(y/n)? "
+echo -n "Unrar(y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando Unrar"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     sudo apt-get install unrar -y
-
 
 fi
 
-echo -n "Instalar Deluge(torrent)(y/n)? "
+echo -n "Deluge(torrent)(y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando Deluge(torrent)"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     sudo add-apt-repository ppa:deluge-team/ppa
     sudo apt install deluge -y
 
 fi
-echo -n "Instalar Visual Code (y/n)? "
+echo -n "Visual Code (y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando Visual Code"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
 
     sudo snap install code --classic
 
     sudo snap refresh code
 fi
 
-echo -n "Instalar Spotify (y/n)? "
+echo -n "Spotify (y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    
-    echo "Instalando Spotify"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+
+    echo "Installing..."
 
     sudo snap install spotify
 fi
 
-echo -n "Instalar Telegram (y/n)? "
+echo -n "Telegram (y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
+if [ "$answer" != "${answer#[Yy]}" ]; then
 
-    echo "Instalando Telegram"
+    echo "Installing..."
 
     sudo snap install telegram-desktop
 
     sudo snap install telegram-cli
 fi
 
-echo -n "Instalar Inkscape (y/n)? "
+echo -n "Inkscape (y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    
-    echo "Instalando Inkscape"
+if [ "$answer" != "${answer#[Yy]}" ]; then
 
-    sudo apt  install inkscape
+    echo "Installing..."
+
+    sudo apt install inkscape
 fi
-echo -n "Instalar Z-shell (y/n)? "
+
+echo -n "Z-shell (y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando Z-shell"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     echo "Atenção!"
     echo "Após a instalação reiniciar o computador"
 
@@ -98,8 +98,7 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
         zsh-syntax-highlighting
         zsh-autosuggestions
 
-)
-'
+)'
     echo 'Precione qualquer tecla para continuar'
     read aux
 
@@ -108,50 +107,49 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
     cd .oh-my-zsh/custom/plugins/
 
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-    git clone https://github.com/zsh-users/zsh-autosuggestions 
+    git clone https://github.com/zsh-users/zsh-autosuggestions
 
 fi
 
-echo -n "Instalar Nodejs versão 12.16 (y/n)? "
+echo -n "Nodejs versão 12.16 (y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando NodeJs 12.16"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
 
     curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
     sudo apt-get install nodejs -y
 fi
 
-echo -n "Instalar ReactJs (y/n)? "
+echo -n "ReactJs (y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando ReactJs"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     sudo npm install -g create-react-app
 fi
 
-
-echo -n "Instalar React Native (y/n)? "
+echo -n "React Native (y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando Java"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     sudo add-apt-repository ppa:openjdk-r/ppa
     sudo apt-get update
     sudo apt-get install openjdk-8-jdk -y
 
-    echo "Instalando Android Studio"
+    echo "Installing..."
     sudo snap install android-studio --classic
 
     echo "Lembre-se de configurar o sdk no android studio"
     echo 'Precione qualquer tecla para continuar'
     read aux
 
-    echo "Instalando ADB"
+    echo "Installing..."
     sudo apt-get install adb -y
 
     echo "De baixar o platform-tools mais recente e por no /usr/lib/android-sdk"
     echo 'Precione qualquer tecla para continuar'
     read aux
 
-    echo "Instalando o Watchman"
+    echo "Installing..."
     cd ~
     git clone https://github.com/facebook/watchman.git
     cd watchman/
@@ -160,8 +158,8 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
     sudo apt-get install libtool -y
     sudo apt-get install libssl-dev -y
     sudo apt install pkg-config -y
-    ./autogen.sh 
-    ./configure 
+    ./autogen.sh
+    ./configure
     make
     sudo make install
     watchman --version
@@ -169,11 +167,10 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
     sudo npm install -g react-native-cli
 fi
 
-
-echo -n "Instalar Virtual Box(y/n)? "
+echo -n "Virtual Box(y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando Virtual Box"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     sudo apt update
     sudo apt upgrade
 
@@ -186,26 +183,26 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
 
 fi
 
-echo -n "Instalar AdonisJs(y/n)? "
+echo -n "AdonisJs(y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando Adonis"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     sudo npm i -g @adonisjs/cli
 
 fi
-echo -n "Instalar Apache(y/n)? "
+echo -n "Apache(y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando Apache"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     sudo apt-get install apache2 -y
     sudo service apache2 status
 
 fi
 
-echo -n "Instalar PHP(y/n)? "
+echo -n "PHP(y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando PHP"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     sudo apt-get install php libapache2-mod-php php-mysql -y
     echo "Ponha o index.php na frente"
     echo 'Precione qualquer tecla para continuar'
@@ -214,58 +211,56 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
     sudo systemctl restart apache2
 fi
 
-
-echo -n "Instalar Composer(y/n)? "
+echo -n "Composer(y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando Composer"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     sudo curl -sS https://getcomposer.org/installer | php
     sudo mv composer.phar /usr/local/bin/composer
     chmod +x /usr/local/bin/composer
-    
 
 fi
 
-echo -n "Instalar Postman(y/n)? "
+echo -n "Postman(y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando Postman"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     sudo apt install snapd snapd-xdg-open -y
     sudo snap install postman
     sudo snap switch --channel=candidate postman
     sudo snap refresh postman
 fi
 
-echo -n "Instalar VLC(y/n)? "
+echo -n "VLC(y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando VLC"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     sudo snap install vlc
 
 fi
 
-echo -n "Instalar Mysql Workbench(y/n)? "
+echo -n "Mysql Workbench(y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando Mysql Workbench"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     sudo apt update
     sudo apt install mysql-workbench -y
 
 fi
 
-echo -n "Instalar Postgres(y/n)? "
+echo -n "Postgres(y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando Postgres"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     sudo apt update
     sudo apt install postgresql postgresql-contrib
 
 fi
 
-echo -n "Instalar PgAdmin4(y/n)? "
+echo -n "PgAdmin4(y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando PgAdmin4"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
     sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
     sudo apt update
@@ -273,12 +268,10 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
     echo "Para acessar acesse o localhost/pgadmin4"
 fi
 
-
-
-echo -n "Instalar PgModeler(y/n)? "
+echo -n "PgModeler(y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando PgModeler"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
 
     sudo apt install build-essential -y
     sudo apt install qtcreator -y
@@ -293,11 +286,10 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
     echo "Para roda rode no terminal 'pgmodeler'"
 fi
 
-
-echo -n "Instalar Fonte Firacode(y/n)? "
+echo -n "Fonte Firacode(y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando Firacode"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     fonts_dir="${HOME}/.local/share/fonts"
     if [ ! -d "${fonts_dir}" ]; then
         echo "mkdir -p $fonts_dir"
@@ -313,18 +305,18 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
             echo "wget -O $file_path $file_url"
             wget -O "${file_path}" "${file_url}"
         else
-        echo "Found existing file $file_path"
-        fi;
+            echo "Found existing file $file_path"
+        fi
     done
 
     echo "fc-cache -f"
     fc-cache -f
 fi
 
-echo -n "Instalar Python 3(y/n)? "
+echo -n "Python 3(y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando Python 3"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     sudo apt update
     sudo apt install software-properties-common
     sudo add-apt-repository ppa:deadsnakes/ppa
@@ -332,20 +324,20 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
     sudo apt install python3.7
 fi
 
-echo -n "Instalar Pycharm(y/n) via snap? "
+echo -n "Pycharm(y/n) via snap? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando Pycharm"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     sudo apt update
     sudo snap install pycharm-community --classic
     sudo snap refresh pycharm-community --classic
 
 fi
 
-echo -n "Instalar Pip/Pip3(y/n)? "
+echo -n "Pip/Pip3(y/n)? "
 read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    echo "Instalando Pip/Pip3"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+    echo "Installing..."
     sudo apt update
     sudo apt install python3-pip
     sudo apt install python-pip
