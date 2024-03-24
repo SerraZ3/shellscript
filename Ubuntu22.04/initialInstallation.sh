@@ -50,6 +50,10 @@ if [ "$answer" != "${answer#[Yy]}" ]; then
   sudo apt update
 
   sudo apt install code
+
+
+  # Ou
+  # sudo snap install --classic code
 fi
 
 echo -n "Spotify (y/n)? "
