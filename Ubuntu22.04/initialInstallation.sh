@@ -226,3 +226,8 @@ sudo apt update
 sudo apt install mongodb-org -y
 
 
+echo "Instalando mongo"
+cd ~/Download
+wget https://downloads.mongodb.com/compass/mongodb-compass_1.40.4_amd64.deb
+
+sudo dpkg -i mongo*
